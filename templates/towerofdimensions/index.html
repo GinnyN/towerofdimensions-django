@@ -1,0 +1,30 @@
+<!Doctype html>
+<html lang="en">
+	<head>
+		<title>Tower of Dimensions</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+		<script>
+			$(document).on("ready", assign);
+
+			function assign()
+			{
+				$("#steam img").on("click", {provider: "http://steamcommunity.com/openid"} ,openid);
+			}
+
+			function openid(ev)
+			{
+				provider = ev.data.provider;
+				$("#openid_identifier").val(provider);
+				$("#fp_openid_login").submit();
+			}
+		</script>
+	</head>
+	<body>
+		<figure id="steam">
+			<img src="http://cdn.steamcommunity.com/public/images/signinthroughsteam/sits_large_border.png" />
+		</figure>
+		<form id="fp_openid_login" action="" method="post">
+        	<input type="hidden" id="openid_identifier" name="openid_identifier" value="" />
+    	</form>
+	</body>
+</html>
