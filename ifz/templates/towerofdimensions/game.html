@@ -8,34 +8,13 @@
 		<link href='http://fonts.googleapis.com/css?family=Adamina' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Podkova' rel='stylesheet' type='text/css'>
 		<link href='{{ STATIC_URL }}/towerofdimensions/css/style.css' rel='stylesheet' type='text/css'>
-		<script>
+		<script src="{{ STATIC_URL }}/towerofdimensions/js/begin.js"></script>
+		<script src="{{ STATIC_URL }}/towerofdimensions/js/mercenaries.js"></script>
 
-			$(document).on("ready", ready);
-
-			function ready(){
-				margin = parseInt($("#header-background").css("margin-top").split("px")[0]);
-				padding = parseInt($("#header-background").css("padding-top").split("px")[0]);
-				marginFooter = parseInt($("footer").css("margin-top").split("px")[0]);
-				marginAside = parseInt($("#content").css("margin-top").split("px")[0]);
-				$("#content").height($(document).height() - $("#header-background").height() - (2 * margin) - (2 * padding) - $("footer").height() - (2 * marginFooter) - (marginAside));
-
-				$("nav ul li a").hover(function(){
-						$(this).addClass("hover");
-					}, 
-					function(){
-						$(this).removeClass("hover")
-					});
-				$("nav ul li a").on("click", clickMenu);
-			}
-
-			function clickMenu(){
-				$("nav ul li a").removeClass("active");
-				$(this).addClass("active");
-			}
-
-		</script>
 	</head>
 	<body>
+		{% csrf_token %}
+		<input type="hidden" value="{{SITE_URL}}/mercenaries/" id="menu-mercenaries-url"/>
 		<header id="header-background">
 			<figure id="title">
 				<img src="{{ STATIC_URL }}/towerofdimensions/img/title.gif"/>
@@ -52,7 +31,7 @@
 			<nav>
 				<ul>
 					<li><a class="active"><span class="icon-menu icon-menu-blumiere"> </span> <span class="description"> Dashboard</span></a></li>
-					<li><a> <figure class="icon-menu-player"><img src="{{player.avatar}}" /></figure><span class="description">Mercenaries</span></a></li>
+					<li><a id="menu-mercenaries"> <figure class="icon-menu-player"><img src="{{player.avatar}}" /></figure><span class="description">Mercenaries</span></a></li>
 					<li><a><span class="icon-menu icon-menu-cameen"> </span><span class="description"> Dimensions</span></a></li>
 					<li><a><span class="icon-menu icon-menu-adele"> </span><span class="description"> Inn</span></a></li>
 					<li><a><span class="icon-menu icon-menu-marion"> </span><span class="description"> Store</span></a></li>
@@ -60,9 +39,15 @@
 					<li><a><span class="icon-menu icon-menu-arturo"> </span><span class="description"> Blacksmith</span></a></li>
 				</ul>
 			</nav>
+			<div id="main">
+
+			</div>
 		</div>
 		<footer id="footer" class="clear">
 			<a href="http://steampowered.com">Powered by Steam</a>
 		</footer>
+		<div id="loading">
+			<img src="{{ STATIC_URL }}/towerofdimensions/img/loadingAnimation.gif"/>
+		</div>
 	</body>
 </html>

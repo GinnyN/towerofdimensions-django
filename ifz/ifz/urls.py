@@ -8,6 +8,9 @@ from django.views.generic.simple import direct_to_template
 urlpatterns = patterns('',
      url(r'^$', direct_to_template, {'template': 'index.html'}),
      url(r'^game/$', 'towerofdimensions.views.info'),
+     
+     url(r'^mercenaries/$', 'towerofdimensions.mercenaries.setup'),
+     url(r'^mercenaries/(?P<mercenary_id>\d+)/$', "towerofdimensions.mercenaries.fullView"),
 
    	url(r'', include('social_auth.urls')),
 
