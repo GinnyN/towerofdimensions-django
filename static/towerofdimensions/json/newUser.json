@@ -1,0 +1,19 @@
+{
+	"user":{
+		"dinero": 300,
+		"mercenarios": [0,1],
+		"items": [0,1],
+		"achivements":[],
+		"dimensiones":[
+			{
+				"id": 0,
+				"zonas":[
+					{
+						"id": 0,
+						"misiones":[0]
+					}
+				]
+			}
+		]
+	}
+}

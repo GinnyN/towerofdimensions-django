@@ -1,0 +1,12 @@
+<div class="mercenary-list">
+	{% for mercenary in mercenaries %}
+	<article class="mercenary-resume {{mercenary.id}}">
+		<span class="mercenary-icon mercenary-icon-{{mercenary.idBase}}"></span>
+		<span class="info">
+			<h3>{{mercenary.nombre}}</h3>
+			<p>Level: {{mercenary.nivel}} / Exp: {{mercenary.exp}}</p>
+			<p>HP: {{mercenary.hpActual}}/{{mercenary.hpMax}}</p>
+		</span>
+	</article>
+	{% endfor %}
+</div>
