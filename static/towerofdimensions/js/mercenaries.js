@@ -1,5 +1,6 @@
 function mercenariesSetup(){
 	$("#loading").show();
+	$("#main").html("");
 	$.ajax({
 		type : 'POST',
 		data: {csrfmiddlewaretoken: $("input[name='csrfmiddlewaretoken']").val()},
@@ -27,6 +28,14 @@ function openFullView(){
 		success: function(response){
 			$("#main").append(response);
 			$("#loading").hide();
+			$(".column-left li").hover(
+				function(){
+					$(this).find(".item-description").show();
+				},
+				function(){
+					$(this).find(".item-description").hide();
+				}
+			);
 		}
 	});
 }

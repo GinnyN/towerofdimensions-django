@@ -9,6 +9,9 @@ urlpatterns = patterns('',
      url(r'^$', direct_to_template, {'template': 'index.html'}),
      url(r'^game/$', 'towerofdimensions.views.info'),
      
+     #Log out
+     url(r'^logout/$',  'django.contrib.auth.views.logout', {'next_page': '/'}),
+
      url(r'^mercenaries/$', 'towerofdimensions.mercenaries.setup'),
      url(r'^mercenaries/(?P<mercenary_id>\d+)/$', "towerofdimensions.mercenaries.fullView"),
 

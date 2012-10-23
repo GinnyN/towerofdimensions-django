@@ -18,6 +18,20 @@
 				/*google = "https://www.google.com/accounts/o8/id?openid.ns=http://specs.openid.net/auth/2.0&openid.claimed_id=http://specs.openid.net/auth/2.0/identifier_select&openid.identity=http://specs.openid.net/auth/2.0/identifier_select&openid.return_to=http://towerofdimension-local.com/&openid.realm=http://towerofdimension-local.com/&openid.assoc_handle=ABSmpf6DNMw&openid.mode=checkid_setup&openid.ax.required=avatar,firstname";
 
 				$("#google").on("click", {provider: google} ,openid);*/
+
+				i = Math.floor(Math.random()*3)
+
+				if(i == 0)
+					$("html").css("background","url('{{ STATIC_URL }}/towerofdimensions/img/menu/ginny.jpg')");
+				else if(i==1)
+					$("html").css("background","url('{{ STATIC_URL }}/towerofdimensions/img/menu/spark.jpg')");
+				else if(i==2)
+					$("html").css("background","url('{{ STATIC_URL }}/towerofdimensions/img/menu/jimmy.jpg')");
+
+				$("html").css("-webkit-background-size", "cover");
+				$("html").css("-moz-background-size", "cover");
+				$("html").css("-o-background-size", "cover");
+				$("html").css("background-size", "cover");
 			}
 
 			function openid(ev)
@@ -30,10 +44,12 @@
 	</head>
 	<body>
 		<div id="init">
-			<h1> Tower of Dimensions </h1>
-		<figure id="steam">
-			<img src="http://cdn.steamcommunity.com/public/images/signinthroughsteam/sits_large_border.png" />
-		</figure>
+			<figure id="title">
+				<img src="{{ STATIC_URL }}/towerofdimensions/img/title.gif"/>
+			</figure>
+			<figure id="steam">
+				<img src="http://cdn.steamcommunity.com/public/images/signinthroughsteam/sits_large_border.png" />
+			</figure>
 		</div>
 		<!--<p id="google">Log In with Google</p>-->
 		<form id="fp_openid_login" action="/login/openid/" method="post">

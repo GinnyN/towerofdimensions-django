@@ -6,58 +6,74 @@
 		<h2>{{mercenary.nombre}}</h2>
 		<p>Level: {{mercenary.nivel}} / Exp: {{mercenary.exp}}</p>
 		<p>HP: {{mercenary.hpActual}}/{{mercenary.hpMax}}</p>
-		<table class="characteristics">
-			<tr>
-				<td>AGI:</td>
-				<td>{{mercenary.agilidad}}</td>
-			</tr>
-			<tr>
-				<td>DEX:</td>
-				<td>{{mercenary.destreza}}</td>
-			</tr>
-			<tr>
-				<td>CON:</td>
-				<td>{{mercenary.constitucion}}</td>
-			</tr>
-			<tr>
-				<td>STR:</td> 
-				<td>{{mercenary.fuerza}}</td>
-			</tr>
-			<tr>
-				<td>INT:</td>
-				<td>{{mercenary.inteligencia}}</td>
-			</tr>
-			<tr>
-				<td>POW:</td>
-				<td>{{mercenary.poder}}</td>
-			</tr>
-			<tr>
-				<td>CHA:</td>
-				<td> {{mercenary.carisma}}</td>
-			</tr>
-			<tr>
-				<td>WIS:</td>
-				<td>{{mercenary.sabiduria}}</td>
-			</tr>
-		</table>
-		<table class="characteristics">
-			<tr>
-				<td>Marcial:</td>
-				<td>{{mercenary.marcial}}</td>
-			</tr>
-			<tr>
-				<td>Stealth:</td>
-				<td>{{mercenary.stealth}}</td>
-			</tr>
-			<tr>
-				<td>Magic:</td>
-				<td>{{mercenary.magia}}</td>
-			</tr>
-			<tr>
-				<td>Technology:</td>
-				<td>{{mercenary.tecnologia}}</td>
-			</tr>
-		</table>
-
+		<div class="characteristics">
+			<table>
+				<tr>
+					<td>AGI:</td>
+					<td>{{mercenary.agilidad}}</td>
+				</tr>
+				<tr>
+					<td>DEX:</td>
+					<td>{{mercenary.destreza}}</td>
+				</tr>
+				<tr>
+					<td>CON:</td>
+					<td>{{mercenary.constitucion}}</td>
+				</tr>
+				<tr>
+					<td>STR:</td> 
+					<td>{{mercenary.fuerza}}</td>
+				</tr>
+				<tr>
+					<td>INT:</td>
+					<td>{{mercenary.inteligencia}}</td>
+				</tr>
+				<tr>
+					<td>POW:</td>
+					<td>{{mercenary.poder}}</td>
+				</tr>
+				<tr>
+					<td>CHA:</td>
+					<td> {{mercenary.carisma}}</td>
+				</tr>
+				<tr>
+					<td>WIS:</td>
+					<td>{{mercenary.sabiduria}}</td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td>Marcial:</td>
+					<td>{{mercenary.marcial}}</td>
+				</tr>
+				<tr>
+					<td>Stealth:</td>
+					<td>{{mercenary.stealth}}</td>
+				</tr>
+				<tr>
+					<td>Magic:</td>
+					<td>{{mercenary.magia}}</td>
+				</tr>
+				<tr>
+					<td>Technology:</td>
+					<td>{{mercenary.tecnologia}}</td>
+				</tr>
+			</table>
+		</div>
+		<div class="items">
+			<ul class="column-left">
+				<li class="item-{{item1.idBase}} item1">
+					<div class="item-description">{{item1.nombre}}: {{item1.descripcion}}</div>
+				</li>
+				<li class="item-{{item2.idBase}} item2"></li>
+				<li class="item-{{item3.idBase}} item3"></li>
+			</ul>
+			<ul class="column-left">
+				<li class="item-{{item4.idBase}} item4"></li>
+				<li class="item-{{item5.idBase}} item5"></li>
+				<li class="item-{{item6.idBase}} item6"></li>
+			</ul>
+		</div>
+		<p class="description">{{description}}</p>
 	</div>
 </div>

@@ -47,6 +47,7 @@ a:hover{
 	margin: 0 1em;
 }
 .characteristics{
+	float: left;
 	margin: 0.5em;
 }
 .complete-info{
@@ -64,6 +65,7 @@ a:hover{
 	margin: 1.5em;
 	padding: 1em;
 }
+
 footer{
 	background: rgb(250, 250, 250);
 	background: rgba(250, 250, 250, 0.8);
@@ -83,6 +85,19 @@ footer{
 	display: inline-block;
 	float: left;
 }
+#init{
+	background: rgb(250, 250, 250);
+	background: rgba(250, 250, 250, 0.8);
+	margin: 20% 10% 0 40%;
+	text-align: center;
+	width: 30em;
+}
+#init figure{
+	width: 30em;
+}
+#init figure img#title{
+	width: 100%;
+}
 #loading{
 	display: none;
 	position: absolute;
@@ -99,6 +114,39 @@ footer{
 }
 .mercenary-full-view{
 	overflow: hidden;
+}
+.mercenary-full-view .description{
+	width: 25em;
+	float: left;
+}
+
+.mercenary-full-view .complete-info .items .column-left{
+	display: block;
+	float: left;
+}
+.mercenary-full-view .complete-info .items .column-left li{
+	background-image: url("../img/items/items.png");
+	background-repeat: no-repeat;
+	list-style: none;
+	margin: 1em;
+	width: 50px;
+	height: 50px;
+}
+
+.mercenary-full-view .complete-info .items .column-left li .item-description{
+	display: none;
+	position: absolute;
+	background: #f2e5b8;
+	border: #0f0111 2px solid;
+	margin-top: -1.75em;
+	padding: 0.25em;
+}
+
+.mercenary-full-view .complete-info .items .column-left li.item-0{
+	background-position: 0px -50px;
+}
+.mercenary-full-view .complete-info .items .column-left li.item-1{
+	background-position: 0px -100px;
 }
 .mercenary-list{
 	-webkit-transition:all 1s ease-in-out;
@@ -183,7 +231,6 @@ nav ul li a.active{
 }
 .description{
 	display: block;
-	float: left;
 }
 .icon-menu{
 	background: url("../img/menu/faces.png");

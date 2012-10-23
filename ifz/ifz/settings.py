@@ -197,7 +197,8 @@ OPENID_CREATE_USERS = True
 #OPENID_SSO_SERVER_URL = 'https://login.launchpad.net/'
 
 # Tell django.contrib.auth to use the OpenID signin URLs.
-LOGIN_URL = '/openid/login/'
+LOGIN_URL = '/login/openid/'
+LOGIN_ERROR_URL = '/'
 LOGIN_REDIRECT_URL = '/game/'
 
 #Steam log settings

@@ -9,7 +9,12 @@ class Player(models.Model):
 class Steam(models.Model):
     steamId = models.CharField(max_length=300)
     player = models.ForeignKey(Player)
-    
+
+class Item(models.Model):
+    player = models.ForeignKey(Player)
+    flag = models.IntegerField()
+    idBase = models.IntegerField()    
+
 class Mercenary(models.Model):
     player = models.ForeignKey(Player)
     idBase = models.IntegerField()
@@ -41,12 +46,12 @@ class Mercenary(models.Model):
     crecimientoMagia = models.IntegerField()
     crecimientoTecnologia = models.IntegerField()
     hpCalculo = models.CharField(max_length=300)
-    item1 = models.IntegerField()
-    item2 = models.IntegerField()
-    item3 = models.IntegerField()
-    item4 = models.IntegerField()
-    item5 = models.IntegerField()
-    item6 = models.IntegerField()
+    item1 = models.ForeignKey(Item, related_name='item1_id', null=True)
+    item2 = models.ForeignKey(Item, related_name='item2_id', null=True)
+    item3 = models.ForeignKey(Item, related_name='item3_id', null=True)
+    item4 = models.ForeignKey(Item, related_name='item4_id', null=True)
+    item5 = models.ForeignKey(Item, related_name='item5_id', null=True)
+    item6 = models.ForeignKey(Item, related_name='item6_id', null=True)
     hpMax = models.IntegerField()
     hpActual = models.IntegerField()
     misionActual = models.IntegerField()
